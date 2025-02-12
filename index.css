@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9e79f;
+}
+
+a:active, a:hover, a:visited, a:link {
+    color: black;
+    text-decoration: none;;
+}
+
+button:hover {
+    transform: scale(1.1);
+    transition: all 100ms ease-out;
+}
+
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fdd835;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 100%;
+}
+
+.navbar .secondary-button, .navbar .secondary-button a {
+    color: white;
+    border: none;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo-img {
+    width: 7rem;
+    height: 7rem;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-family: 'Lobster', serif;
+    font-weight: 100;
+    position: absolute;
+    bottom: 1rem;
+    left: 5.1rem;
+}
+
+
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    margin: 0 1rem;
+    font-size: 1rem;
+    
+}
+
+.secondary-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px;
+}
+
+.hero img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.start-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Reviews Section */
+.reviews {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.review-box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+}
+
