@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9e79f;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.lato {
+    font-family: "Lato", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 a:active, a:hover, a:visited, a:link {
@@ -15,6 +26,7 @@ a:active, a:hover, a:visited, a:link {
 button:hover {
     transform: scale(1.1);
     transition: all 100ms ease-out;
+    background-color: initial;
 }
 
 
@@ -25,11 +37,12 @@ button:hover {
     align-items: center;
     background-color: #fdd835;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    padding: 0px 12px 15px 10px;
     width: 100%;
+    border-bottom: #000 1px solid;
 }
 
-.navbar .secondary-button, .navbar .secondary-button a {
+.navbar .secondary-button, .navbar .secondary-button a, .start-btn a {
     color: white;
     border: none;
 }
@@ -54,6 +67,11 @@ button:hover {
     left: 5.1rem;
 }
 
+.logo-name {
+    font-size: 2.5rem;
+    font-family: 'Lobster', serif;
+    font-weight: 100;
+}
 
 
 .nav-links a {
@@ -64,11 +82,16 @@ button:hover {
     
 }
 
-.secondary-button {
+.secondary-button, .secondary-button:hover, .secondary-button:active, .secondary-button:focus-visible, .secondary-button:focus {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    padding: 5px 10px !important;
+    border-radius: 5px !important;
+}
+
+.start-btn:hover {
     background-color: #4CAF50;
     color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
 }
 
 
@@ -88,7 +111,7 @@ button:hover {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 30px;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
@@ -98,16 +121,45 @@ button:hover {
 .reviews {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 6rem;
     padding: 20px;
 }
 
 .review-box {
     background-color: white;
     padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    border: #000 solid 1px;
+    box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, .3);
     text-align: center;
-    width: 200px;
+    width: 13rem;
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Lato", serif;
+
 }
 
+.review-box .rating {
+    font-size: 2rem;
+    letter-spacing: .75rem;
+    text-shadow: 0px 6px 3px rgba(0, 0, 0, .3);
+}
+
+.review-box .testimony, .review-box .reviewee {
+    font-size: 1.2rem;
+}
+
+div .svg-container {
+    width: 1rem !important;
+}
+
+div:has(.svg-container) {
+    gap: 0 !important;
+}
+
+.svg-text {
+    padding-right: 10rem;
+    padding-bottom: 2rem;
+}
