@@ -128,6 +128,28 @@
             Create Account
           </button>
         </form>
+
+        <form
+          class="signup-form confirm-code-form d-flex flex-column hidden"
+          id="confirm-code-form"
+          onsubmit="VerifyCode(e)"
+        >
+          <h2 class="mt-5 pt-5 align-self-center">Enter your code</h2>
+
+          <div class="d-flex gap-5 justify-content-center mt-5">
+            <input
+              class="signup-input"
+              id="confirm-code"
+              type="text"
+              required
+              placeholder="Enter your code"
+            />
+          </div>
+
+          <button class="mt-5 w-50 align-self-center" type="submit">
+            Confirm Code
+          </button>
+        </form>
       </div>
     </div>
 
@@ -152,6 +174,8 @@
           .addEventListener("submit", function (event) {
             event.preventDefault();
 
+            const confirmationForm =
+              document.getElementById("confirm-code-form");
             const code = document.getElementById("code");
             code.value = GetRandomCode();
 
@@ -168,7 +192,9 @@
             emailjs.sendForm("service_crtc6cg", "template_j2q1beo", this).then(
               () => {
                 console.log("SUCCESS!");
-                ClearFields();
+                ClearForm();
+                this.classList.toggle("hidden");
+                confirmationForm.classList.toggle("hidden");
               },
               (error) => {
                 console.log("FAILED...", error);
