@@ -4,7 +4,7 @@ const email = document.getElementById("Email");
 const age = document.getElementById("Age");
 const TermsandConditions = document.getElementById("TermsandConditions");
 
-const codeConfirmationForm = document.getElementById("confirm-code-form");
+const codeConfirmationForm = document.getElementById("confirmCodeForm");
 const codeInput = document.getElementById("confirm-code");
 
 function GetRandomCode(event) {
@@ -32,18 +32,30 @@ function ClearForm() {
 
 // this code below is not working properly - code not full verified and needs to be double checked!!
 
-function VerifyCode(e) {
-  e.preventDefault();
+function VerifyCode(event) {
+  event.preventDefault();
+  console.log("test confirm code");
+  alert("confirm code hit!");
 
-  codeConfirmationForm.addEventListener("submit", function () {
-    const user = JSON.parse(localStorage.getItem("user"));
+  let user = JSON.parse(localStorage.getItem("user"));
 
-    if (user.code == codeInput) {
-      user = { ...user, verified: true };
-      localStorage.setItem("user", JSON.stringify(user));
-      alert("Successfully Verified!");
-    } else {
-      alert("Invalid code!");
-    }
-  });
+  if (user.code == codeInput.value) {
+    user = { ...user, verified: true, DateLastLoggedIn: new Date() };
+    localStorage.setItem("user", JSON.stringify(user));
+  } else {
+    alert("invalid code!");
+  }
+
+  // const currDate = new Date();
+  // undefined
+  // let futureDate = new Date();
+  // futureDate.setDate(futureDate.getDate() + 3);
+
+  // const timeDiff = futureDate - currDate;
+
+  // const hrsDiff = timeDiff / (1000 * 60 * 60);
+
+  // console.log(hrsDiff);
+
+  // });
 }

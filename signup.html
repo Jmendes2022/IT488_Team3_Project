@@ -131,8 +131,8 @@
 
         <form
           class="signup-form confirm-code-form d-flex flex-column hidden"
-          id="confirm-code-form"
-          onsubmit="VerifyCode(e)"
+          id="confirmCodeForm"
+          onsubmit="VerifyCode(event)"
         >
           <h2 class="mt-5 pt-5 align-self-center">Enter your code</h2>
 
@@ -174,8 +174,7 @@
           .addEventListener("submit", function (event) {
             event.preventDefault();
 
-            const confirmationForm =
-              document.getElementById("confirm-code-form");
+            const confirmationForm = document.getElementById("confirmCodeForm");
             const code = document.getElementById("code");
             code.value = GetRandomCode();
 
