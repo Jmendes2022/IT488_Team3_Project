@@ -34,28 +34,19 @@ function ClearForm() {
 
 function VerifyCode(event) {
   event.preventDefault();
-  console.log("test confirm code");
-  alert("confirm code hit!");
 
   let user = JSON.parse(localStorage.getItem("user"));
 
   if (user.code == codeInput.value) {
-    user = { ...user, verified: true, DateLastLoggedIn: new Date() };
+    user = {
+      ...user,
+      verified: true,
+      DateLastLoggedIn: new Date(),
+      loggedIn: true,
+    };
     localStorage.setItem("user", JSON.stringify(user));
+    window.location.href = "/index.html";
   } else {
     alert("invalid code!");
   }
-
-  // const currDate = new Date();
-  // undefined
-  // let futureDate = new Date();
-  // futureDate.setDate(futureDate.getDate() + 3);
-
-  // const timeDiff = futureDate - currDate;
-
-  // const hrsDiff = timeDiff / (1000 * 60 * 60);
-
-  // console.log(hrsDiff);
-
-  // });
 }

@@ -1,8 +1,8 @@
 const loggedUser = document.getElementById("loggedUser");
 const signIn = document.getElementById("signIn");
 
+LoadTestData();
 GetUserData();
-// LoadTestData();
 
 function LoadTestData() {
   const user = {
@@ -13,7 +13,7 @@ function LoadTestData() {
     email: "Jordanm1996.jm@gmail.com",
     verified: true,
     loggedIn: true,
-    DateLastLoggedIn: new Date().getHours() - 1,
+    DateLastLoggedIn: new Date().getHours(),
   };
 
   localStorage.setItem("user", JSON.stringify(user));
@@ -21,10 +21,12 @@ function LoadTestData() {
 
 function GetUserData() {
   let user = JSON.parse(localStorage.getItem("user"));
+  console.log(user);
 
   if (user && !user.DateLastLoggedIn) {
     user = { ...user, loggedIn: false };
     localStorage.setItem("user", JSON.stringify(user));
+    console.log("logged in");
   }
 
   const now = new Date().getHours();
@@ -44,5 +46,6 @@ function GetUserData() {
     loggedUser.innerHTML = `Hi, ${user.firstName}!`;
     loggedUser.classList.toggle("hidden");
     signIn.classList.toggle("hidden");
+    console.log("logged in");
   }
 }

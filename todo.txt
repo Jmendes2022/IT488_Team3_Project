@@ -5,3 +5,7 @@ create sign in page
 insert nav buttons after logging in to insert data and show reports
 
 adjust some CSS if feeling froggy?
+
+min age of 18 for signing up
+
+
