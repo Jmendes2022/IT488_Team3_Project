@@ -1,7 +1,7 @@
 const loggedUser = document.getElementById("loggedUser");
 const signIn = document.getElementById("signIn");
 
-LoadTestData();
+// LoadTestData();
 GetUserData();
 
 function LoadTestData() {
