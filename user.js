@@ -1,11 +1,12 @@
 const loggedUser = document.getElementById("loggedUser");
 const signIn = document.getElementById("signIn");
+const logoutBtn = document.getElementById("logoutBtn");
 
 const signupBtn = document.getElementById("signupBtn");
 const expenseBtn = document.getElementById("expenseBtn");
 const reportsBtn = document.getElementById("reportsBtn");
 
-LoadTestData();
+// LoadTestData();
 GetUserData();
 
 function LoadTestData() {
@@ -53,10 +54,18 @@ function GetUserData() {
     loggedUser.classList.toggle("hidden");
     signIn.classList.toggle("hidden");
 
+    logoutBtn.classList.toggle("hidden");
+    logoutBtn.addEventListener("click", () => logout());
     signupBtn.classList.toggle("hidden");
     expenseBtn.classList.toggle("hidden");
     reportsBtn.classList.toggle("hidden");
   }
+}
+
+function logout() {
+  localStorage.removeItem("user");
+  console.log("successfully logged out!");
+  window.location.href = "/index.html";
 }
 
 function convertToSentenceCase(input) {

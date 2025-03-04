@@ -266,3 +266,14 @@ form button:hover,
 .TermsandConditionsLink:hover {
   text-decoration: underline;
 }
+
+.logoutBtn {
+  border: none;
+  background-color: transparent;
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.logoutBtn:hover {
+  transform: scale(1);
+}

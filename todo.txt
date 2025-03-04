@@ -1,14 +1,15 @@
-create terms and conditions page
 
 create sign in page
 
-insert nav buttons after logging in to insert data and show reports
+test the sign in feature and local storage when loading the page intiially
+
+work on the expenses page to add in expenses 
+
+work on the reports page to display the reports from all the expenses
 
 adjust some CSS if feeling froggy? (centering all of the divs in the middle of the page instead of adjusting per screen size)
 
-min age of 18 for signing up
 
-test the sign in feature and local storage when loading the page intiially
 
 
 
