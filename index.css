@@ -266,3 +266,15 @@ form button:hover,
 .TermsandConditionsLink:hover {
   text-decoration: underline;
 }
+.TermsandConditionsLink:hover {
+  text-decoration: underline;
+}
+
+/*Used as background to Terms and Conditions Text*/
+.body-square {
+	padding: 10px;
+    display: inline-block; 
+    background-color: white;
+	box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.3);
+	border-radius: 15px;
+}
