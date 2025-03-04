@@ -13,34 +13,3 @@ test the sign in feature and local storage when loading the page intiially
 
 
 
-T&C text below -- 
-
-**Terms and Conditions**
-
-**Last Updated: [Date]**
-
-Welcome to BudgetBee! These Terms and Conditions govern your use of the BudgetBee application. By using BudgetBee, you agree to these terms.
-
-**1. Use of the App**  
-- BudgetBee is a personal finance tracking tool designed to help users manage their expenses and budget effectively.  
-- You must be at least 18 years old to use BudgetBee.
-- You agree not to misuse the app or use it for any illegal activities.
-
-**2. User Data & Privacy**  
-- We respect your privacy. Please refer to our Privacy Policy for details on how we collect, store, and protect your data.
-- You are responsible for keeping your login credentials secure.
-
-**3. Disclaimer**  
-- BudgetBee provides financial tracking tools but does not offer professional financial advice.
-- We are not responsible for any financial decisions made based on the app’s insights.
-
-**4. Limitation of Liability**  
-- BudgetBee is provided "as is" without warranties of any kind.
-- We are not liable for any damages or losses resulting from your use of the app.
-
-**5. Changes to These Terms**  
-- We may update these terms from time to time. Continued use of the app after updates means you accept the changes.
-
-**6. Contact Us**  
-If you have any questions, please contact us at [Your Contact Email].
-

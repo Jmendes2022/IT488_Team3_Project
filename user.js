@@ -1,7 +1,11 @@
 const loggedUser = document.getElementById("loggedUser");
 const signIn = document.getElementById("signIn");
 
-// LoadTestData();
+const signupBtn = document.getElementById("signupBtn");
+const expenseBtn = document.getElementById("expenseBtn");
+const reportsBtn = document.getElementById("reportsBtn");
+
+LoadTestData();
 GetUserData();
 
 function LoadTestData() {
@@ -13,7 +17,7 @@ function LoadTestData() {
     email: "Jordanm1996.jm@gmail.com",
     verified: true,
     loggedIn: true,
-    DateLastLoggedIn: new Date().getHours(),
+    DateLastLoggedIn: new Date(),
   };
 
   localStorage.setItem("user", JSON.stringify(user));
@@ -30,7 +34,7 @@ function GetUserData() {
   }
 
   const now = new Date().getHours();
-  const DateLastLoggedIn = user.DateLastLoggedIn;
+  const DateLastLoggedIn = new Date(user.DateLastLoggedIn).getHours();
   const timeDifference = now - DateLastLoggedIn;
   const hoursElapsed = parseInt(timeDifference);
 
@@ -43,9 +47,21 @@ function GetUserData() {
   }
 
   if (user && user.verified && user.loggedIn && hoursElapsed == 0) {
-    loggedUser.innerHTML = `Hi, ${user.firstName}!`;
+    const userFirstName = convertToSentenceCase(user.firstName);
+
+    loggedUser.innerHTML = `Hi, ${userFirstName}!`;
     loggedUser.classList.toggle("hidden");
     signIn.classList.toggle("hidden");
-    console.log("logged in");
+
+    signupBtn.classList.toggle("hidden");
+    expenseBtn.classList.toggle("hidden");
+    reportsBtn.classList.toggle("hidden");
+  }
+}
+
+function convertToSentenceCase(input) {
+  if (input) {
+    const result = input.charAt(0).toUpperCase() + input.slice(1);
+    return result;
   }
 }

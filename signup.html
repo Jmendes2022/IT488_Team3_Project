@@ -26,8 +26,9 @@
       <div
         class="d-flex flex-column align-items-end justify-content-between gap-5"
       >
-        <div class="">
-          <a href="#">Sign In</a>
+        <div>
+          <a id="signIn" href="#">Sign In</a>
+          <span id="loggedUser" class="hidden"></span>
         </div>
         <div class="nav-links col d-flex gap-3">
           <button
@@ -153,6 +154,7 @@
       </div>
     </div>
 
+    <script src="./user.js"></script>
     <script src="./signup.js"></script>
     <script
       type="text/javascript"
@@ -176,6 +178,7 @@
 
             const confirmationForm = document.getElementById("confirmCodeForm");
             const code = document.getElementById("code");
+
             code.value = GetRandomCode();
 
             const data = {
@@ -186,19 +189,25 @@
               code: code.value,
             };
 
-            SaveToLocalStorage(data);
+            if (data.age < 18) {
+              alert("You must be 18 or older to create an account!");
+            } else if (data.age >= 18) {
+              SaveToLocalStorage(data);
 
-            emailjs.sendForm("service_crtc6cg", "template_j2q1beo", this).then(
-              () => {
-                console.log("SUCCESS!");
-                ClearForm();
-                this.classList.toggle("hidden");
-                confirmationForm.classList.toggle("hidden");
-              },
-              (error) => {
-                console.log("FAILED...", error);
-              }
-            );
+              emailjs
+                .sendForm("service_crtc6cg", "template_j2q1beo", this)
+                .then(
+                  () => {
+                    console.log("SUCCESS!");
+                    ClearForm();
+                    this.classList.toggle("hidden");
+                    confirmationForm.classList.toggle("hidden");
+                  },
+                  (error) => {
+                    console.log("FAILED...", error);
+                  }
+                );
+            }
           });
       };
     </script>

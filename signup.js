@@ -30,8 +30,6 @@ function ClearForm() {
   TermsandConditions.checked = false;
 }
 
-// this code below is not working properly - code not full verified and needs to be double checked!!
-
 function VerifyCode(event) {
   event.preventDefault();
 
@@ -44,6 +42,7 @@ function VerifyCode(event) {
       DateLastLoggedIn: new Date(),
       loggedIn: true,
     };
+
     localStorage.setItem("user", JSON.stringify(user));
     window.location.href = "/index.html";
   } else {
