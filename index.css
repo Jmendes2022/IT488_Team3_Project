@@ -17,6 +17,12 @@ body {
   font-style: normal;
 }
 
+.lobster {
+  font-size: 1.8rem;
+  font-family: "Lobster", serif;
+  font-weight: 100;
+}
+
 a:active,
 a:hover,
 a:visited,
@@ -171,9 +177,15 @@ div:has(.svg-container) {
   width: 674px;
   height: 420px;
   border-radius: 1rem;
-
   background-image: url(./Images/Contact.png);
   background-size: cover;
+}
+
+.login-background {
+  width: 674px;
+  height: 420px;
+  background-color: #fff;
+  box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.3);
 }
 
 .contact-input {
@@ -276,4 +288,14 @@ form button:hover,
 
 .logoutBtn:hover {
   transform: scale(1);
+}
+
+.join-now-link {
+  color: #0000ff !important;
+  text-decoration: underline !important;
+}
+
+.join-now-text,
+p span {
+  font-size: 1.3rem !important;
 }

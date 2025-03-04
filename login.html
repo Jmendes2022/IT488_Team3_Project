@@ -3,9 +3,214 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+    <title>Login - BudgetBee</title>
   </head>
   <body>
-    TESTTT
+    <div class="navbar">
+      <div class="logo-container">
+        <img src="./Images/logo.png" alt="logoImg" class="logo-img" />
+        <div class="logo-text"><strong>BudgetBee</strong></div>
+      </div>
+      <div
+        class="d-flex flex-column align-items-end justify-content-between gap-5"
+      >
+        <div>
+          <a id="signIn" href="./login.html">Sign In</a>
+          <span id="loggedUser" class="hidden"></span>
+        </div>
+        <div class="nav-links col d-flex gap-3">
+          <button
+            type="button"
+            class="btn btn-light"
+            onclick="window.location.href='./index.html'"
+          >
+            Home
+          </button>
+          <button
+            type="button"
+            class="btn btn-light"
+            onclick="window.location.href='./contact.html'"
+          >
+            Contact
+          </button>
+          <button
+            type="button"
+            class="btn btn-light"
+            onclick="window.location.href='./about.html'"
+          >
+            About
+          </button>
+          <button
+            type="button"
+            class="btn btn-light secondary-button"
+            id="signupBtn"
+            onclick="window.location.href='./signup.html'"
+          >
+            Sign Up
+          </button>
+          <button
+            type="button"
+            class="btn btn-light secondary-button hidden"
+            id="reportsBtn"
+            onclick="window.location.href='./reports.html'"
+          >
+            Reports
+          </button>
+          <button
+            type="button"
+            class="btn btn-light secondary-button hidden"
+            id="expenseBtn"
+            onclick="window.location.href='./expenses.html'"
+          >
+            Expenses
+          </button>
+        </div>
+      </div>
+    </div>
+
+<!-- enter login information form -->
+
+    <div class="w-100 d-flex flex-column align-items-center mt-5 mb-5">
+      <div class="login-background hidden">
+        <div class="p-4 mt-3">
+          <h2>Sign In</h2>
+          <h3>Fly financially free with <span class="lobster">BudgetBee</span></h3>
+        </div>
+        <form
+          class="d-flex flex-column w-50 p-4"
+          onsubmit=""
+        >
+
+          <div class="d-flex flex-column gap-4 mb-4">
+            <input
+              class="contact-input"
+              id="email"
+              type="email"
+              required
+              placeholder="Email"
+            />
+          <button class="w-50" type="submit">Send Code</button>
+        </form>
+      </div>
+      <div class="join-now-text d-flex justify-content-center">
+        <p>New to <span class="lobster">BudgetBee</span>? <a class="lato join-now-link" href="./signup.html">Join now</a></p>
+      </div>
+      </div>
+
+<!-- Enter login code form here -->
+
+      <div class="login-background hidden">
+        <div class="p-4 mt-3">
+          <h2>Sign In</h2>
+          <h3>Fly financially free with <span class="lobster">BudgetBee</span></h3>
+        </div>
+        <form
+          class="d-flex flex-column w-50 p-4"
+          onsubmit=""
+        >
+
+          <div class="d-flex flex-column gap-4 mb-4">
+            <input
+              class="contact-input"
+              id="code"
+              type="text"
+              required
+              placeholder="Enter Code"
+            />
+          <button class="w-50" type="submit">Login</button>
+        </form>
+      </div>
+      <div class="join-now-text d-flex justify-content-center">
+        <p>Check your email for a login code</p>
+      </div>
+    </div>
+
+
+<!-- Sign in success displayed here -->
+
+<div class="login-background">
+  <div class="p-4 mt-3">
+    <h2>Sign In</h2>
+    <h3>Fly financially free with <span class="lobster">BudgetBee</span></h3>
+  </div>
+  <div class="d-flex align-items-center flex-column">
+    <svg
+          width="200"
+          height="200"
+          viewBox="0 0 300 300"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M62.4999 90C62.4999 82.7066 65.3972 75.7118 70.5545 70.5546C75.7117 65.3973 82.7064 62.5 89.9999 62.5H102.5C109.761 62.4959 116.726 59.6201 121.875 54.5L130.625 45.75C133.18 43.18 136.219 41.1406 139.565 39.7489C142.912 38.3572 146.501 37.6407 150.125 37.6407C153.749 37.6407 157.338 38.3572 160.684 39.7489C164.031 41.1406 167.069 43.18 169.625 45.75L178.375 54.5C183.525 59.625 190.5 62.5 197.75 62.5H210.25C217.543 62.5 224.538 65.3973 229.695 70.5546C234.853 75.7118 237.75 82.7066 237.75 90V102.5C237.75 109.75 240.625 116.725 245.75 121.875L254.5 130.625C257.07 133.181 259.109 136.219 260.501 139.566C261.893 142.912 262.609 146.501 262.609 150.125C262.609 153.749 261.893 157.338 260.501 160.685C259.109 164.031 257.07 167.069 254.5 169.625L245.75 178.375C240.63 183.524 237.754 190.489 237.75 197.75V210.25C237.75 217.543 234.853 224.538 229.695 229.695C224.538 234.853 217.543 237.75 210.25 237.75H197.75C190.489 237.754 183.524 240.63 178.375 245.75L169.625 254.5C167.069 257.07 164.031 259.109 160.684 260.501C157.338 261.893 153.749 262.609 150.125 262.609C146.501 262.609 142.912 261.893 139.565 260.501C136.219 259.109 133.18 257.07 130.625 254.5L121.875 245.75C116.726 240.63 109.761 237.754 102.5 237.75H89.9999C82.7064 237.75 75.7117 234.853 70.5545 229.695C65.3972 224.538 62.4999 217.543 62.4999 210.25V197.75C62.4958 190.489 59.6199 183.524 54.4999 178.375L45.7499 169.625C43.1799 167.069 41.1404 164.031 39.7487 160.685C38.3571 157.338 37.6406 153.749 37.6406 150.125C37.6406 146.501 38.3571 142.912 39.7487 139.566C41.1404 136.219 43.1799 133.181 45.7499 130.625L54.4999 121.875C59.6199 116.726 62.4958 109.761 62.4999 102.5V90Z"
+            fill="#F8F9FA"
+            stroke="black"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M112.5 150L137.5 175L187.5 125"
+            stroke="#69AF53"
+            stroke-width="15"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <p class="">Login Successful! Please wait...</p>
+  </div>
+ 
+</div>
+
+
+      <div
+        class="w-50 d-flex flex-column align-items-center mt-5"
+        id="message-sent"
+      >
+        <svg
+          width="300"
+          height="300"
+          viewBox="0 0 300 300"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M62.4999 90C62.4999 82.7066 65.3972 75.7118 70.5545 70.5546C75.7117 65.3973 82.7064 62.5 89.9999 62.5H102.5C109.761 62.4959 116.726 59.6201 121.875 54.5L130.625 45.75C133.18 43.18 136.219 41.1406 139.565 39.7489C142.912 38.3572 146.501 37.6407 150.125 37.6407C153.749 37.6407 157.338 38.3572 160.684 39.7489C164.031 41.1406 167.069 43.18 169.625 45.75L178.375 54.5C183.525 59.625 190.5 62.5 197.75 62.5H210.25C217.543 62.5 224.538 65.3973 229.695 70.5546C234.853 75.7118 237.75 82.7066 237.75 90V102.5C237.75 109.75 240.625 116.725 245.75 121.875L254.5 130.625C257.07 133.181 259.109 136.219 260.501 139.566C261.893 142.912 262.609 146.501 262.609 150.125C262.609 153.749 261.893 157.338 260.501 160.685C259.109 164.031 257.07 167.069 254.5 169.625L245.75 178.375C240.63 183.524 237.754 190.489 237.75 197.75V210.25C237.75 217.543 234.853 224.538 229.695 229.695C224.538 234.853 217.543 237.75 210.25 237.75H197.75C190.489 237.754 183.524 240.63 178.375 245.75L169.625 254.5C167.069 257.07 164.031 259.109 160.684 260.501C157.338 261.893 153.749 262.609 150.125 262.609C146.501 262.609 142.912 261.893 139.565 260.501C136.219 259.109 133.18 257.07 130.625 254.5L121.875 245.75C116.726 240.63 109.761 237.754 102.5 237.75H89.9999C82.7064 237.75 75.7117 234.853 70.5545 229.695C65.3972 224.538 62.4999 217.543 62.4999 210.25V197.75C62.4958 190.489 59.6199 183.524 54.4999 178.375L45.7499 169.625C43.1799 167.069 41.1404 164.031 39.7487 160.685C38.3571 157.338 37.6406 153.749 37.6406 150.125C37.6406 146.501 38.3571 142.912 39.7487 139.566C41.1404 136.219 43.1799 133.181 45.7499 130.625L54.4999 121.875C59.6199 116.726 62.4958 109.761 62.4999 102.5V90Z"
+            fill="#F8F9FA"
+            stroke="black"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M112.5 150L137.5 175L187.5 125"
+            stroke="#69AF53"
+            stroke-width="15"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <h2 class="mt-3 mb-3">Message Sent!</h2>
+        <!-- <button type="submit" class="homeBtn"><a href="./index.html">Return Home</a></button> -->
+        <button type="click" class="homeBtn" onclick="ReturnHome()">
+          Return Home
+        </button>
+      </div>
+    </div>
+
+    <script src="./user.js"></script>
+    <script src="./contact.js"></script>
   </body>
 </html>
