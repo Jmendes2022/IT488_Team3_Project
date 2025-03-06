@@ -63,7 +63,10 @@ function GetUserData() {
 }
 
 function logout() {
-  localStorage.removeItem("user");
+  let user = JSON.parse(localStorage.getItem("user"));
+  user = { ...user, loggedIn: false };
+  localStorage.setItem("user", JSON.stringify(user));
+
   console.log("successfully logged out!");
   window.location.href = "/index.html";
 }
