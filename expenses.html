@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="index.css" />
-    <title>Home - BudgetBee</title>
+    <title>Expenses - BudgetBee</title>
   </head>
   <body>
     <div class="navbar">
@@ -93,8 +93,29 @@
       </div>
     </div>
 
-    <h1>Expenses will be entered here!</h1>
+    <div class="d-flex flex-column">
+      
+      <div class="d-flex justify-content-center mt-5">
+        <h1>Expense Entry</h1>
+      </div>
+
+      <!-- expenses added here via JS -->
+      <div id="expenses">
+
+      </div>
+
+      <!-- expense form below -->
+
+      <form class="" id="expense-form" onsubmit="AddExpense(event)">
+        <div class="d-flex justify-content-center gap-3 mt-5">
+          <input type="text" required placeholder="Expense Type" id="added-expense"/>
+          <input type="number" required placeholder="0.00" id="added-expense-amount"/>
+          <button type="submit">Add Expense</button>
+        </div>
+      </form>
+    </div>
 
     <script src="./user.js"></script>
+    <script src="./expenses.js"></script>
   </body>
 </html>
