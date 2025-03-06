@@ -7,14 +7,8 @@ const TermsandConditions = document.getElementById("TermsandConditions");
 const codeConfirmationForm = document.getElementById("confirmCodeForm");
 const codeInput = document.getElementById("confirm-code");
 
-function GetRandomCode(event) {
-  const newCode = Math.floor(100000 + Math.random() * 900000).toString();
-
-  let user = JSON.parse(localStorage.getItem("user"));
-
-  user = { ...user, code: newCode };
-
-  localStorage.setItem("user", JSON.stringify(user));
+function GetRandomCode() {
+  return Math.floor(100000 + Math.random() * 900000).toString();
 }
 
 function SaveToLocalStorage(data) {

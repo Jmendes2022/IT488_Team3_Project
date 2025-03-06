@@ -4,7 +4,7 @@ const displayCodeSuccess = document.getElementById("displayCodeSuccess");
 
 const code = document.getElementById("code");
 
-function GetRandomCode(event) {
+function GetRandomCode() {
   const code = Math.floor(100000 + Math.random() * 900000).toString();
 
   console.log(code);
@@ -16,6 +16,7 @@ function GetRandomCode(event) {
   console.log(user);
 
   localStorage.setItem("user", JSON.stringify(user));
+  return code;
 }
 
 function GetUserData() {
@@ -32,6 +33,10 @@ function DisplayEnterLoginCode() {
 function DisplayCodeSuccess() {
   enterCodeForm.classList.toggle("hidden");
   displayCodeSuccess.classList.toggle("hidden");
+
+  setTimeout(() => {
+    window.location.href = "./index.html";
+  }, 2000);
 }
 
 function VerifyCode(e) {
@@ -41,10 +46,15 @@ function VerifyCode(e) {
   let user = JSON.parse(localStorage.getItem("user"));
 
   if (userInput.value == user.code) {
-    alert("success!");
+    console.log("success!");
+    
+    user = {...user, loggedIn: true, DateLastLoggedIn: new Date()};
+    localStorage.setItem("user", JSON.stringify(user));
     DisplayCodeSuccess();
+    
   } else {
-    alert("failed! :(");
+    alert("Incorrect code! Please try again!");
+    console.log("Incorrect code");
   }
 }
 
