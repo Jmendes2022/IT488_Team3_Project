@@ -17,18 +17,22 @@ function GetCurrentExpenses() {
     
     const user = GetCurrentUser();
 
-    const expenses = [...user.expenses];
+    const expenses = user.expenses || [];
 
-    expenses.map(exp => expensesField.innerHTML = "<h1>Hello!</h1>");
+    expensesField.innerHTML = "";
+
+    const expensesHTML = expenses.map(x => `<input type='text' required placeholder='Expense Type' value=${x.name}/> </input> <input type='text' required placeholder='Expense Type' value=$${x.amount}/>`).join("");
+    expensesField.innerHTML = expensesHTML;
+
+
 }
 
 function AddExpense(event) {
     event.preventDefault();
 
     let user = GetCurrentUser();
-    console.log(`${newExpense.value} - ${newExpenseAmount.value}`);
     
-    let expenses = [user.expenses] || [];
+    let expenses = user.expenses || [];
 
     const expenseToAdd = {
         name: newExpense.value,
@@ -36,10 +40,11 @@ function AddExpense(event) {
     }
 
     expenses.push(expenseToAdd);
-    
+    user = {...user, expenses: expenses};
 
-    user = {...user, expenses: {...expenses}};
-
+    newExpense.value = "";
+    newExpenseAmount.value = "";
 
     SaveCurrentUser(user);
+    GetCurrentExpenses();
 }
