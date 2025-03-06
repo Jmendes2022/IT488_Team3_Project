@@ -1,15 +1,10 @@
 
 create sign in page
   -adjust the text size of the login success page 
-  - setup email system for login code to be sent
 
-login page
-  -code being sent to email service as undefined?? need to figure out why on login page.
-  
-
-test the sign in feature and local storage when loading the page intiially
 
 work on the expenses page to add in expenses 
+  -When adding in expenses, key:value setup is not correct. needs to be mapped over?
 
 work on the reports page to display the reports from all the expenses
 
