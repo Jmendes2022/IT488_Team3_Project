@@ -86,7 +86,8 @@ function GetCurrentExpenses() {
       document.getElementById("added-expense").focus();
     });
   } else {
-    expensesTable.innerHTML = "";
+    expensesTable.innerHTML =
+      "<h3 class='m-auto'>You currently have no expenses - Add some below!</h3>";
   }
 }
 
