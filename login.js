@@ -47,13 +47,13 @@ function VerifyCode(e) {
 
   if (userInput.value == user.code) {
     console.log("success!");
-    
-    user = {...user, loggedIn: true, DateLastLoggedIn: new Date()};
+
+    user = { ...user, loggedIn: true, DateLastLoggedIn: new Date() };
     localStorage.setItem("user", JSON.stringify(user));
     DisplayCodeSuccess();
-    
   } else {
     alert("Incorrect code! Please try again!");
+    userInput.value = "";
     console.log("Incorrect code");
   }
 }

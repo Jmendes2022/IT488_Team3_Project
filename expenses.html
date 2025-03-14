@@ -26,15 +26,15 @@
       <div
         class="d-flex flex-column align-items-end justify-content-between gap-5"
       >
-      <div>
-        <a id="signIn" href="./login.html">Sign In</a>
-        <div class="d-flex flex-column">
-          <span id="loggedUser" class="hidden"></span>
-          <button type="button" id="logoutBtn" class="hidden logoutBtn">
-            Logout
-          </button>
+        <div>
+          <a id="signIn" href="./login.html">Sign In</a>
+          <div class="d-flex flex-column">
+            <span id="loggedUser" class="hidden"></span>
+            <button type="button" id="logoutBtn" class="hidden logoutBtn">
+              Logout
+            </button>
+          </div>
         </div>
-      </div>
         <div class="nav-links col d-flex gap-3">
           <button
             type="button"
@@ -94,22 +94,32 @@
     </div>
 
     <div class="d-flex flex-column">
-      
       <div class="d-flex justify-content-center mt-5">
         <h1>Expense Entry</h1>
       </div>
 
       <!-- expenses added here via JS -->
-      <div id="expenses">
-
-      </div>
+      <div
+        class="d-flex w-50 align-self-center mt-5 expenses"
+        id="expenses"
+      ></div>
 
       <!-- expense form below -->
 
       <form class="" id="expense-form" onsubmit="AddExpense(event)">
         <div class="d-flex justify-content-center gap-3 mt-5">
-          <input type="text" required placeholder="Expense Type" id="added-expense"/>
-          <input type="number" required placeholder="0.00" id="added-expense-amount"/>
+          <input
+            type="text"
+            required
+            placeholder="Expense Type"
+            id="added-expense"
+          />
+          <input
+            type="number"
+            required
+            placeholder="0.00"
+            id="added-expense-amount"
+          />
           <button type="submit">Add Expense</button>
         </div>
       </form>
