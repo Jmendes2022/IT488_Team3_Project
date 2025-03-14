@@ -303,3 +303,12 @@ p span {
 .expenses {
   max-height: 50vh;
 }
+
+.delete-expense {
+  color: red;
+}
+
+.delete-expense:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

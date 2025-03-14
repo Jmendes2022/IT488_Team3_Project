@@ -100,7 +100,7 @@
 
       <!-- expenses added here via JS -->
       <div
-        class="d-flex w-50 align-self-center mt-5 expenses"
+        class="d-flex w-75 align-self-center mt-5 expenses"
         id="expenses"
       ></div>
 
@@ -123,6 +123,63 @@
           <button type="submit">Add Expense</button>
         </div>
       </form>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Edit Expense
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <form onsubmit="SaveEditedExpenses()">
+              <div class="d-flex gap-3">
+                <span id="modal-expense-key" hidden></span>
+                <input
+                  class="input"
+                  id="modal-expense-name"
+                  required
+                  type="text"
+                />
+                <input
+                  class="input"
+                  id="modal-expense-amount"
+                  required
+                  type="text"
+                />
+              </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
+
+        </div>
+      </div>
     </div>
 
     <script src="./user.js"></script>
