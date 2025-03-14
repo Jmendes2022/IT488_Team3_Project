@@ -85,6 +85,8 @@ function GetCurrentExpenses() {
     document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("added-expense").focus();
     });
+  } else {
+    expensesTable.innerHTML = "";
   }
 }
 
@@ -150,10 +152,20 @@ function DeleteExpense(expense) {
   );
 
   if (res) {
-    const filteredExpenses = expenses.filter((x, key) => key != expense && x);
-    let user = GetCurrentUser();
-    user = { ...user, expenses: filteredExpenses };
-    SaveCurrentUser(user);
-    GetCurrentExpenses();
+    let filteredExpenses = [];
+
+    if (expenses.length == 1) {
+      filteredExpenses = [];
+      let user = GetCurrentUser();
+      user = { ...user, expenses: filteredExpenses };
+      SaveCurrentUser(user);
+      GetCurrentExpenses();
+    } else {
+      filteredExpenses = expenses.filter((x, key) => key != expense && x);
+      let user = GetCurrentUser();
+      user = { ...user, expenses: filteredExpenses };
+      SaveCurrentUser(user);
+      GetCurrentExpenses();
+    }
   }
 }
