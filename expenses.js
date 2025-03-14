@@ -36,7 +36,7 @@ function GetCurrentExpenses() {
       <th></th>
     </tr>
   </thead>
-  <tbody id="expensesTable">
+  <tbody id="expensesTable" >
   </tbody>
 </table>`;
 
@@ -44,7 +44,7 @@ function GetCurrentExpenses() {
 
     const expensesHTML = expenses.map(
       (x, key) => `
-    <tr>
+    <tr >
         <td scope="row">${key + 1}</td>
         <td>${x.name}</td>
         <td>${x.amount}</td>
@@ -57,7 +57,7 @@ function GetCurrentExpenses() {
             </div>
         </td>
         <td>
-            <div class="delete-expense" id="delete-expense">
+            <div class="delete-expense" data-key="${key}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
                 <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
@@ -74,7 +74,17 @@ function GetCurrentExpenses() {
       }
     });
 
+    expensesFields.addEventListener("click", function (event) {
+      if (event.target.closest(".delete-expense")) {
+        const key = event.target.closest(".delete-expense").dataset.key;
+        DeleteExpense(parseInt(key));
+      }
+    });
+
     expensesFields.innerHTML = expensesHTML.join("");
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("added-expense").focus();
+    });
   }
 }
 
@@ -98,6 +108,7 @@ function AddExpense(event) {
 
   SaveCurrentUser(user);
   GetCurrentExpenses();
+  document.getElementById("added-expense").focus();
 }
 
 function EditExpense(expense) {
@@ -128,4 +139,21 @@ function SaveEditedExpenses() {
   user.expenses = updatedExpenses;
   SaveCurrentUser(user);
   GetCurrentExpenses();
+}
+
+function DeleteExpense(expense) {
+  let expenses = JSON.parse(localStorage.getItem("user")).expenses;
+  let foundExpense = expenses[expense];
+
+  const res = confirm(
+    `Are you sure you want to delete ${foundExpense.name}? This cannot be undone!`
+  );
+
+  if (res) {
+    const filteredExpenses = expenses.filter((x, key) => key != expense && x);
+    let user = GetCurrentUser();
+    user = { ...user, expenses: filteredExpenses };
+    SaveCurrentUser(user);
+    GetCurrentExpenses();
+  }
 }

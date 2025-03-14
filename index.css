@@ -301,7 +301,8 @@ p span {
 }
 
 .expenses {
-  max-height: 50vh;
+  max-height: 30rem;
+  overflow-y: auto;
 }
 
 .delete-expense {
