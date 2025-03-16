@@ -141,7 +141,15 @@ function SaveEditedExpenses() {
   const expense = parseInt(modalExpenseKey.innerHTML, 10);
   let foundExpense = expenses[expense];
 
-  foundExpense.name = modalExpenseName.value;
+  const firstLetterCapitialized = modalExpenseName.value
+    .trim()
+    .charAt(0)
+    .toUpperCase();
+
+  const sliced = modalExpenseName.value.slice(1);
+  const formattedValue = firstLetterCapitialized + sliced;
+
+  foundExpense.name = formattedValue;
   foundExpense.amount = modalExpenseAmount.value;
 
   const updatedExpenses = expenses.map((x, index) => {

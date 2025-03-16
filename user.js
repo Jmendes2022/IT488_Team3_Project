@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 GetUserData();
 
-setInterval(CheckRecentActivity, 60000);
+setInterval(CheckRecentActivity, 5000);
 
 // function LoadTestData() {
 //   const user = {
