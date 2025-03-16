@@ -41,9 +41,9 @@ function LoadDoughnutChart() {
       labels: expenses,
       datasets: [
         {
-          label: "Total:",
+          label: "Percentage",
           data: expensePercentages,
-          borderWidth: 1,
+          borderWidth: 2,
         },
       ],
     },
