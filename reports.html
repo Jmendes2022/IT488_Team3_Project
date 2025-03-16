@@ -26,15 +26,15 @@
       <div
         class="d-flex flex-column align-items-end justify-content-between gap-5"
       >
-      <div>
-        <a id="signIn" href="./login.html">Sign In</a>
-        <div class="d-flex flex-column">
-          <span id="loggedUser" class="hidden"></span>
-          <button type="button" id="logoutBtn" class="hidden logoutBtn">
-            Logout
-          </button>
+        <div>
+          <a id="signIn" href="./login.html">Sign In</a>
+          <div class="d-flex flex-column">
+            <span id="loggedUser" class="hidden"></span>
+            <button type="button" id="logoutBtn" class="hidden logoutBtn">
+              Logout
+            </button>
+          </div>
         </div>
-      </div>
         <div class="nav-links col d-flex gap-3">
           <button
             type="button"
@@ -93,8 +93,21 @@
       </div>
     </div>
 
-    <h1>reports will be shown here!</h1>
+    <div class="d-flex flex-column align-items-center">
+      <h1 class="m-5">Expense Breakdown</h1>
+    </div>
+
+    <div
+      class="doughnut-chart-container d-flex flex-column mb-5"
+      id="doughnut-chart-container"
+    >
+      <canvas id="doughtnut-chart"></canvas>
+      <div class="expense-list" id="expense-list"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="./user.js"></script>
+    <script src="./reports.js"></script>
   </body>
 </html>

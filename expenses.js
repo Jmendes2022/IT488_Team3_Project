@@ -98,8 +98,18 @@ function AddExpense(event) {
 
   let expenses = user.expenses || [];
 
+  const firstLetterCapitialized = newExpense.value
+    .trim()
+    .charAt(0)
+    .toUpperCase();
+
+  const sliced = newExpense.value.slice(1);
+  const formattedValue = firstLetterCapitialized + sliced;
+
+  console.log(formattedValue);
+
   const expenseToAdd = {
-    name: newExpense.value,
+    name: formattedValue,
     amount: newExpenseAmount.value,
   };
 

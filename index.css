@@ -313,3 +313,19 @@ p span {
   transform: scale(1.1);
   cursor: pointer;
 }
+
+.doughnut-chart-container {
+  width: 50vw;
+  height: auto;
+  margin: auto;
+}
+
+.expense-list-container {
+  overflow-y: auto;
+  max-height: 10rem;
+}
+
+.expense-ul {
+  list-style-type: none;
+  font-size: 1.2rem;
+}
