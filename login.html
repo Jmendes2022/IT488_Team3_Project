@@ -218,7 +218,7 @@
 
         const user = GetUserData();
 
-        if (!user) {
+        if (!user.email) {
           alert("email does not exist!");
           return;
         }
