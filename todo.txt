@@ -1,15 +1,8 @@
+adjust login page for incorrect emial to be kicked back
+
 
 create sign in page
   -adjust the text size of the login success page 
-
-
-work on the expenses page to add in expenses 
-  -When adding in expenses, key:value setup is not correct. needs to be mapped over?
-
-work on the reports page to display the reports from all the expenses
-
-adjust some CSS if feeling froggy? (centering all of the divs in the middle of the page instead of adjusting per screen size)
-
 
 
 
