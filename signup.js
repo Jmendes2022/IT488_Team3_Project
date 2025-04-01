@@ -44,7 +44,7 @@ function VerifyCode(event) {
     };
 
     localStorage.setItem("user", JSON.stringify(user));
-    window.location.href = "/index.html";
+    window.location.href = "~/index.html";
   } else {
     alert("invalid code!");
   }
